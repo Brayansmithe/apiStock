@@ -12,7 +12,16 @@ class ProduitController extends Controller
      */
     public function index()
     {
-        //
+        
+        $produit=produit::all();
+        if($produit!= Null){
+            return $produit;
+        }else{
+            return response()->json([
+                'message'=>'aucun produit enregistre'
+            ]);
+        }
+
     }
 
     /**
