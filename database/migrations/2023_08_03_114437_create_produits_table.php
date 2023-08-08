@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('nomProduit');
             $table->float('prixProduit');
             $table->integer('qteProduit');
-            $table->string('imageProduit');
+            $table->string('imageProduit')->nullable();
             $table->string('nomBoutique');
         });
     }

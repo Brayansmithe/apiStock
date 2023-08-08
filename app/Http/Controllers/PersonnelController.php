@@ -55,6 +55,7 @@ class PersonnelController extends Controller
         $personnel->lieuFonction=$request->lieuFonction;
         $personnel->telPersonnel=$request->telPersonnel;
         $personnel->mdpPersonnel=$request->mdpPersonnel;
+        $personnel->emailPersonnel=$request->emailPersonnel;
 
         $personnel->save();
 
