@@ -37,13 +37,38 @@ class ProduitController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'nomProduit'=>'required|max:255',
+            'prixProduit'=>'required|max:255',
+            'qteProduit'=>'required|max:255',
+            'imageProduit'=>'required|max:255',
+            'boutique'=>'required|max:255',
+           
+            
+            
+                ],
+            [
+                'message'=>'veillez remplire tous les champs svp',
+                
+            ]
+        );
+        $produit=new produit;
+        $produit->nomproduit = $request->nomproduit;
+        $produit->prixProduit = $request->prixProduit;
+        $produit->qteProduit = $request->qteProduit;
+        $produit->imageProduit = $request->imageProduit;
+        $produit->nomBoutique = $request->nomBoutique;
+        $produit->save();
+        return response()->json([
+            'message'=>'produit cree avec succes'
+        ]);
     }
+    
 
     /**
      * Display the specified resource.
      */
-    public function show(produit $produit)
+    public function show($idBoutique)
     {
         //
     }
