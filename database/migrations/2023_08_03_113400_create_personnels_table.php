@@ -18,7 +18,8 @@ return new class extends Migration
             $table->string('prenomPersonnel');
             $table->string('lieuFonction');
             $table->string('mdpPersonnel');
-            $table->integer('telPersonnel');
+            $table->string('emailPersonnel')->unique();
+            $table->string('telPersonnel');
         });
     }
 
