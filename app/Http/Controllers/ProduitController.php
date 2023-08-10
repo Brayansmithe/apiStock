@@ -110,7 +110,7 @@ class ProduitController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, produit $produit)
+    public function update(Request $request, $id)
     {
         $request->validate([
             'nomProduit'=>'required',
@@ -130,31 +130,47 @@ class ProduitController extends Controller
 
         try {
             $produit=produit::find($id);
+
             if($produit){
-              $exist = Storage::disk('public')->exists("imageProduit/{$produit->imageProduit}");
-                if($exists){
-                    storage::disk('public')->delete("imageProduit/{$produit->imageProduit}");
+
+                if($request->imageProduit){
+                    $exist = Storage::disk('public')->exists("imageProduit/{$produit->imageProduit}");
+                    if($exists){
+                        storage::disk('public')->delete("imageProduit/{$produit->imageProduit}");
+                    }
+
+                    
+                    $imageNane = str::random().".".$request->imageProduit->getClientOriginalExtension();
+                    //Storage::disk('public')->putFileAs('imageProduit',$request->imageProduit,$imageNane);
+                    $path= $request->imageProduit->storeAs('imageProduit',$imageNane,'public');
+                    $produit->fill($request->post())->update();
+                    $produit->imageProduit = $path;
+                    $produit->save();
+
+                    return response()->json([
+                        'message'=>'produit mise a jour avec succes'
+                    ]);
+
+                }else{
+                    $produit->fill($request->post())->update();
+                    return response()->json([
+                        'message'=>'produit mise a jour avec succes'
+                    ]);
                 }
-
-
-                $produit->fiil($request->post())->update();
-                $imageNane = str::random().".".$request->imageProduit->getClientOriginalExtension();
-                //Storage::disk('public')->putFileAs('imageProduit',$request->imageProduit,$imageNane);
-                $path= $request->imageProduit->storeAs('imageProduit',$imageNane,'public');
-                $produit->imageProduit = $path;
-                $produit->save();
+            }else{
                 return response()->json([
                     'message'=>'produit mise a jour avec succes'
                 ]);
-            }
-            
-        } catch (\Throwable $th) {
-            return response()->json([
-                'message'=>'aucun produit ne correspond'
-            ]);
-            
+            }   
+        
+    }catch (\Throwable $th) {
+           return $th;
         }
+
     }
+    
+    
+
 
     /**
      * Remove the specified resource from storage.
@@ -163,7 +179,7 @@ class ProduitController extends Controller
     {
         $produit=produit::find($id);
         if($produit){
-          $exist = Storage::disk('public')->exists("imageProduit/{$produit->imageProduit}");
+          $exists = Storage::disk('public')->exists("imageProduit/{$produit->imageProduit}");
             if($exists){
                 storage::disk('public')->delete("imageProduit/{$produit->imageProduit}");
             }
