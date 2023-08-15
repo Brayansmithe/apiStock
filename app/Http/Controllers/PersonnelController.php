@@ -123,7 +123,6 @@ class PersonnelController extends Controller
             //
             $personnel=personnel::find($id);
             if($personnel){
-               
                 $personnel->delete();
                 return response()->json([
                     'message'=>'suppresion avec succes'

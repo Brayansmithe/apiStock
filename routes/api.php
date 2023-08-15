@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BoutiqueController;
 use App\Http\Controllers\PersonnelController;
 use App\Http\Controllers\ProduitController;
+use App\Http\Controllers\FactureController;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -12,7 +13,8 @@ use App\Http\Controllers\ProduitController;
 |
 | Here is where you can register API routes for your application. These
 | routes are loaded by the RouteServiceProvider and all of them will
-| be assigned to the "api" middleware group. Make something great!
+| be assigned to the "api" middlfile:///home/brayan/Bureau/App3/deskapp2-master/index.html
+eware group. Make something great!
 |
 */
 
@@ -43,3 +45,14 @@ Route::post('createProduit',[ProduitController::class,'store']);
 Route::get('SearchProduit/{idProduit}',[ProduitController::class,'show']);
 Route::put('updateProduit/{idProduit}',[ProduitController::class,'update']);
 Route::delete('supprimerProduit/{idProduit}',[ProduitController::class,'destroy']);
+
+
+
+
+//creation des routes pour le controllers facture
+
+Route::get('listeFacture',[FactureController::class,'index']);  //lister les factures 
+Route::post('creeFacture',[FactureController::class,'store']);
+Route::get('searchFacture/{idFacture}',[FactureController::class,'show']);
+Route::put('updateFacture/{idFacture}',[FactureController::class,'update']);
+Route::delete('supprimerFacture/{idFacture}',[FactureController::class,'destroy']);

@@ -1,0 +1,42 @@
+.vueMer h5{
+    color: rgb(255, 255, 255);
+}
+.participer{
+    text-align: center;
+    color: rgb(127, 137, 40);
+    font-weight: 800;;
+}
+
+.objectif{
+    display: inline-flex;
+    justify-content: space-around; /* espace identique entre les ellement */
+    width: 100%;
+    padding: 20px;
+    background-color: brown;
+}
+.objectif1{
+    margin-left: 20px;
+    text-align: justify;
+    border-radius: 15px;
+}
+
+.objectif2{
+    margin-left: 20px;
+    text-align: justify;
+    border-radius: 15px;
+}
+
+.objectif3{
+    margin-left: 20px;
+    text-align: justify;
+    border-radius: 15px;
+}
+.espace{
+    display: inline-flex;
+    justify-content: space-around;
+    width: 100%;
+    padding: 25px;
+}
+.espace2{
+    width: 600px;
+}

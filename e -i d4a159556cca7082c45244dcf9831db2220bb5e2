@@ -1,0 +1,35 @@
+[33mcommit 51b4cdefaad96bdbd0359d9f085cb6cf9caf4e0b[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m)[m
+Author: Brayansmithe <tchoffobrayan0@gmail.com>
+Date:   Thu Aug 10 13:45:50 2023 +0100
+
+    creation de d un produit
+
+[33mcommit 41e75d1dd1b9033c163143a5d4f2f83085b1dafa[m[33m ([m[1;31morigin/master[m[33m)[m
+Author: Brayansmithe <tchoffobrayan0@gmail.com>
+Date:   Tue Aug 8 16:07:27 2023 +0100
+
+    creation de d un produit
+
+[33mcommit f2b28e44d2a940e2d5452433ea0f179797b8bd61[m
+Author: Brayansmithe <tchoffobrayan0@gmail.com>
+Date:   Tue Aug 8 13:49:30 2023 +0100
+
+    modification des attributs de personel
+
+[33mcommit d4a159556cca7082c45244dcf9831db2220bb5e2[m
+Author: Brayansmithe <tchoffobrayan0@gmail.com>
+Date:   Tue Aug 8 01:18:36 2023 +0100
+
+    ajout de la show pour la creation d un produit
+
+[33mcommit 72c12c7a676fc7be912b6f3417098092a30a30e3[m
+Author: Brayansmithe <tchoffobrayan0@gmail.com>
+Date:   Mon Aug 7 22:04:09 2023 +0100
+
+    modification des controller boutique et personneles
+
+[33mcommit 56aea87db31095b4c8bc1daacd70c0c2d0d809b9[m
+Author: Brayansmithe <tchoffobrayan0@gmail.com>
+Date:   Thu Aug 3 13:53:26 2023 +0100
+
+    mon premiere commit
